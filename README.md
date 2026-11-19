@@ -1,5 +1,7 @@
 # Site Institucional — Marca de Moda e Vestuário
 
+**No ar:** https://mickaeledf.github.io/site-moda-vestuario/
+
 Site institucional de uma página principal + página de catálogo, construído em HTML, Tailwind CSS (CDN) e JavaScript puro. Não exige build, dependências nem servidor: basta abrir o `index.html`.
 
 A estrutura foi preparada como **modelo de vitrine**: todos os textos comerciais, fotos e dados de contato são espaços reservados (`[SUA MARCA]`, `[Inserir Número]`, etc.) para receber o material oficial da marca.
