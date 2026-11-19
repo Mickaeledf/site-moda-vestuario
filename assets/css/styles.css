@@ -1,0 +1,66 @@
+/* =====================================================================
+   SITE INSTITUCIONAL — MARCA DE MODA E VESTUÁRIO
+   Estilos customizados de refinamento editorial e transições.
+   A paleta, a tipografia e as animações principais são definidas em
+   assets/js/tailwind.config.js (configuração do Tailwind CSS).
+   ===================================================================== */
+
+/* ---------------------------------------------------------------------
+   1. BASE DO DOCUMENTO
+   --------------------------------------------------------------------- */
+body {
+    background-color: #F4EFEA;
+    color: #121110;
+    overflow-x: hidden;
+}
+
+/* ---------------------------------------------------------------------
+   2. TEXTURA EDITORIAL
+   --------------------------------------------------------------------- */
+
+/* Textura sutil de papel editorial */
+.editorial-grain {
+    background-image: radial-gradient(rgba(18, 17, 16, 0.04) 1px, transparent 0);
+    background-size: 24px 24px;
+}
+
+/* ---------------------------------------------------------------------
+   3. ANIMAÇÕES DE REVELAÇÃO E HOVER
+   --------------------------------------------------------------------- */
+
+/* Efeito de revelação suave ao rolar a página */
+.reveal-up {
+    opacity: 0;
+    transform: translateY(28px);
+    transition: opacity 0.85s cubic-bezier(0.16, 1, 0.3, 1), transform 0.85s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.reveal-up.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Hover suave em cartões de fotografia */
+.fashion-card img {
+    transition: transform 0.9s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.fashion-card:hover img {
+    transform: scale(1.06);
+}
+
+/* ---------------------------------------------------------------------
+   4. BARRA DE ROLAGEM
+   --------------------------------------------------------------------- */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: #F4EFEA;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #241E1B;
+    border-radius: 4px;
+}

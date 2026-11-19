@@ -1,0 +1,1042 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- SEO Técnico & Metadados Institucionais -->
+    <title>[NOME DA MARCA] | Moda Contemporânea, Alfaiataria & Coleções Exclusivas</title>
+    <meta name="description" content="Explore as coleções, lançamentos e a identidade visual da [NOME DA MARCA]. Vestuário contemporâneo com curadoria editorial e atendimento personalizado.">
+    <meta name="keywords" content="moda, vestuário, coleções, alfaiataria, moda feminina, moda masculina, lançamentos, marca de moda">
+    <meta name="author" content="[NOME DA MARCA]">
+    <meta name="robots" content="index, follow">
+
+    <!-- Open Graph / Redes Sociais -->
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="pt_BR">
+    <meta property="og:title" content="[NOME DA MARCA] — Coleções & Editorial de Moda">
+    <meta property="og:description" content="Conheça nossas vitrines, lançamentos e peças exclusivas. Atendimento direto pelo WhatsApp.">
+    <meta property="og:image" content="https://images.unsplash.com/photo-1509631179647-0177331693ae?auto=format&fit=crop&w=1200&q=80">
+
+    <!-- Tipografia Editorial: Cormorant Garamond (Expressiva/Títulos), Plus Jakarta Sans (Textos), Space Mono (Tags/Detalhes Técnicos) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+
+    <!-- Tailwind CSS + Configuração de Identidade Visual & Paleta -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="assets/js/tailwind.config.js"></script>
+
+    <!-- Estilos customizados de refinamento editorial -->
+    <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+<body class="font-sans antialiased selection:bg-brand-terracotta selection:text-white">
+
+    <!-- =====================================================================
+         BANNER SUPERIOR INFORMATIVO (Aviso de Ambiente Preparado para Dados Reais)
+         ===================================================================== -->
+    <div class="bg-brand-obsidian text-brand-sand text-xs py-2 px-4 border-b border-white/10">
+        <div class="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-2 text-center sm:text-left">
+            <div class="flex items-center gap-2">
+                <span class="inline-block w-2 h-2 rounded-full bg-brand-terracotta animate-pulse"></span>
+                <span class="font-mono uppercase tracking-wider text-[11px] text-brand-gold">Modo Vitrine & Curadoria</span>
+                <span class="text-white/80 hidden md:inline">— Estrutura pronta para receber o logotipo, acervo fotográfico e catálogo oficial da marca.</span>
+            </div>
+            <div class="flex items-center gap-4">
+                <button onclick="toggleEditGuide()" class="underline decoration-brand-gold/60 hover:text-brand-gold transition text-[11px] font-medium">
+                    Ver guia de personalização de dados
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- =====================================================================
+         SEÇÃO 1 — HEADER E NAVEGAÇÃO PRINCIPAL
+         ===================================================================== -->
+    <header id="main-header" class="sticky top-0 z-40 bg-brand-sand/95 backdrop-blur-md border-b border-brand-obsidian/10 transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+
+                <!-- Logotipo da Marca (Preparado para SVG/Imagem Real ou Tipografia) -->
+                <a href="#inicio" onclick="switchView('home')" class="flex items-center gap-3 group focus:outline-none" aria-label="Página inicial da marca">
+                    <div class="w-10 h-10 rounded-full border border-brand-obsidian flex items-center justify-center bg-brand-obsidian text-brand-sand group-hover:bg-brand-terracotta group-hover:border-brand-terracotta transition-colors">
+                        <!-- Monograma Editorial -->
+                        <span class="font-serif italic text-xl font-semibold tracking-tighter">M&A</span>
+                    </div>
+                    <div class="flex flex-col">
+                        <span class="font-serif text-2xl font-semibold tracking-[0.14em] uppercase leading-none text-brand-obsidian">
+                            [SUA MARCA]
+                        </span>
+                        <span class="font-mono text-[9px] uppercase tracking-[0.25em] text-brand-slate mt-1">
+                            Vestuário & Editorial
+                        </span>
+                    </div>
+                </a>
+
+                <!-- Navegação Desktop -->
+                <nav class="hidden lg:flex items-center gap-8" aria-label="Menu principal">
+                    <a href="#inicio" onclick="switchView('home')" class="nav-link text-sm font-medium tracking-wide text-brand-obsidian hover:text-brand-terracotta transition-colors">Início</a>
+                    <a href="#colecoes" onclick="switchView('home')" class="nav-link text-sm font-medium tracking-wide text-brand-obsidian hover:text-brand-terracotta transition-colors">Coleções</a>
+                    <button onclick="switchView('catalog')" class="nav-link text-sm font-medium tracking-wide text-brand-obsidian hover:text-brand-terracotta transition-colors flex items-center gap-1.5">
+                        <span>Catálogo Completo</span>
+                        <span class="px-1.5 py-0.5 text-[10px] font-mono bg-brand-terracotta/15 text-brand-terracotta rounded-full">Vitrine</span>
+                    </button>
+                    <a href="#novidades" onclick="switchView('home')" class="nav-link text-sm font-medium tracking-wide text-brand-obsidian hover:text-brand-terracotta transition-colors">Novidades</a>
+                    <a href="#sobre" onclick="switchView('home')" class="nav-link text-sm font-medium tracking-wide text-brand-obsidian hover:text-brand-terracotta transition-colors">Sobre a marca</a>
+                    <a href="#contato" onclick="switchView('home')" class="nav-link text-sm font-medium tracking-wide text-brand-obsidian hover:text-brand-terracotta transition-colors">Contato</a>
+                </nav>
+
+                <!-- Ações Comerciais (WhatsApp / Atendimento) -->
+                <div class="hidden sm:flex items-center gap-3">
+                    <button onclick="switchView('catalog')" class="px-4 py-2.5 rounded-full border border-brand-obsidian/25 text-xs font-semibold uppercase tracking-wider text-brand-obsidian hover:bg-brand-obsidian hover:text-brand-sand transition-all">
+                        Explorar Peças
+                    </button>
+                    <a href="#contato" onclick="openWhatsAppDrawer('Atendimento Geral')" class="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-brand-obsidian text-brand-sand text-xs font-semibold uppercase tracking-wider hover:bg-brand-terracotta transition-all shadow-sm">
+                        <!-- Ícone WhatsApp SVG -->
+                        <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24" aria-hidden="true"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.77-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.299.045-.677.063-1.092-.069-.252-.08-.575-.187-.988-.365-1.739-.751-2.874-2.502-2.961-2.617-.087-.116-.708-.94-.708-1.793s.448-1.273.607-1.446c.159-.173.346-.217.462-.217l.332.006c.106.005.249-.04.39.298.144.347.491 1.2.534 1.287.043.087.072.188.014.304-.058.116-.087.188-.173.289l-.26.304c-.087.086-.177.18-.076.354.101.174.449.741.964 1.201.662.591 1.221.774 1.394.86s.274.072.376-.043c.101-.116.433-.506.549-.68.116-.173.231-.145.39-.087s1.011.477 1.184.564.289.13.332.202c.045.072.045.419-.1.824z"/></svg>
+                        <span>WhatsApp</span>
+                    </a>
+                </div>
+
+                <!-- Botão Menu Mobile -->
+                <button id="mobile-menu-btn" onclick="toggleMobileMenu()" class="lg:hidden p-2.5 rounded-xl border border-brand-obsidian/15 text-brand-obsidian hover:bg-brand-linen transition" aria-label="Abrir menu de navegação" aria-expanded="false">
+                    <svg id="menu-icon-open" class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M4 7h16M4 12h16M4 17h10"/></svg>
+                    <svg id="menu-icon-close" class="w-6 h-6 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M6 18L18 6M6 6l12 12"/></svg>
+                </button>
+            </div>
+        </div>
+
+        <!-- Gaveta Mobile Responsiva -->
+        <div id="mobile-menu" class="hidden lg:hidden bg-brand-obsidian text-brand-sand border-t border-white/10">
+            <div class="px-6 py-8 space-y-5">
+                <nav class="flex flex-col space-y-4">
+                    <a href="#inicio" onclick="mobileNav('home', '#inicio')" class="font-serif text-2xl hover:text-brand-gold transition">Início</a>
+                    <a href="#colecoes" onclick="mobileNav('home', '#colecoes')" class="font-serif text-2xl hover:text-brand-gold transition">Coleções</a>
+                    <button onclick="mobileNav('catalog', null)" class="text-left font-serif text-2xl text-brand-gold flex items-center gap-2">
+                        <span>Catálogo & Vitrine</span>
+                        <span class="text-xs font-mono uppercase px-2 py-0.5 rounded-full bg-white/10 text-white">2ª Página</span>
+                    </button>
+                    <a href="#novidades" onclick="mobileNav('home', '#novidades')" class="font-serif text-2xl hover:text-brand-gold transition">Novidades</a>
+                    <a href="#sobre" onclick="mobileNav('home', '#sobre')" class="font-serif text-2xl hover:text-brand-gold transition">Sobre a marca</a>
+                    <a href="#contato" onclick="mobileNav('home', '#contato')" class="font-serif text-2xl hover:text-brand-gold transition">Contato</a>
+                </nav>
+                <div class="pt-5 border-t border-white/15 flex flex-col gap-3">
+                    <button onclick="toggleMobileMenu(); openWhatsAppDrawer('Atendimento Mobile')" class="w-full py-3.5 rounded-full bg-brand-terracotta text-white font-semibold text-sm uppercase tracking-wider flex items-center justify-center gap-2">
+                        <span>Falar no WhatsApp</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- =====================================================================
+         VISÃO 1: PÁGINA INSTITUCIONAL PRINCIPAL
+         ===================================================================== -->
+    <main id="view-home">
+
+        <!-- =================================================================
+             SEÇÃO 2 — BANNER PRINCIPAL DE ALTO IMPACTO EDITORIAL
+             ================================================================= -->
+        <section id="inicio" class="relative bg-brand-obsidian text-brand-sand overflow-hidden">
+            <div class="max-w-7xl mx-auto">
+                <div class="grid grid-cols-1 lg:grid-cols-12 min-h-[84vh]">
+
+                    <!-- Coluna Editorial Esquerda (Posicionamento & Ação) -->
+                    <div class="lg:col-span-6 flex flex-col justify-between p-6 sm:p-10 lg:p-16 z-10 relative">
+                        <!-- Elemento Gráfico Superior -->
+                        <div class="flex items-center gap-3 pt-2">
+                            <span class="w-10 h-[1px] bg-brand-gold"></span>
+                            <span class="font-mono text-xs uppercase tracking-[0.25em] text-brand-gold">
+                                [TEMPORADA / EDIÇÃO ATUAL]
+                            </span>
+                        </div>
+
+                        <!-- Frase de Posicionamento e Texto de Apresentação -->
+                        <div class="my-10 lg:my-0 space-y-6">
+                            <h1 class="font-serif text-4xl sm:text-6xl xl:text-7xl font-medium leading-[1.03] tracking-tight text-brand-sand">
+                                Expressão, corte preciso e <span class="italic text-brand-gold font-normal">presença</span> em cada detalhe.
+                            </h1>
+                            <p class="text-brand-sand/80 text-base sm:text-lg max-w-xl leading-relaxed font-light">
+                                Uma curadoria de vestuário pensada para unir estética contemporânea, caimento impecável e versatilidade real. Conheça nossas linhas e explore as peças disponíveis.
+                            </p>
+
+                            <!-- Botões de Chamada para Ação -->
+                            <div class="pt-3 flex flex-wrap items-center gap-4">
+                                <a href="#colecoes" class="px-7 py-4 rounded-full bg-brand-terracotta hover:bg-[#b55231] text-white text-xs sm:text-sm font-semibold uppercase tracking-[0.15em] transition-all shadow-lg shadow-brand-terracotta/25 inline-flex items-center gap-3">
+                                    <span>Conhecer a Coleção</span>
+                                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+                                </a>
+                                <button onclick="switchView('catalog')" class="px-7 py-4 rounded-full border border-brand-sand/30 hover:border-brand-gold hover:text-brand-gold text-brand-sand text-xs sm:text-sm font-semibold uppercase tracking-[0.15em] transition-all">
+                                    Ver Vitrine Completa
+                                </button>
+                            </div>
+                        </div>
+
+                        <!-- Rodapé Gráfico do Banner -->
+                        <div class="grid grid-cols-3 gap-4 pt-6 border-t border-white/15 text-xs">
+                            <div>
+                                <span class="block font-mono text-brand-gold uppercase text-[10px]">Curadoria</span>
+                                <span class="text-brand-sand/90 font-medium">Peças Selecionadas</span>
+                            </div>
+                            <div>
+                                <span class="block font-mono text-brand-gold uppercase text-[10px]">Atendimento</span>
+                                <span class="text-brand-sand/90 font-medium">Consultoria Direta</span>
+                            </div>
+                            <div>
+                                <span class="block font-mono text-brand-gold uppercase text-[10px]">Identidade</span>
+                                <span class="text-brand-sand/90 font-medium">[Cidade / Estado]</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Coluna Fotográfica Direita (Composição Assimétrica Editorial) -->
+                    <div class="lg:col-span-6 relative min-h-[460px] lg:min-h-full overflow-hidden bg-brand-espresso">
+                        <!-- Fotografia Editorial Principal -->
+                        <img
+                            src="https://images.unsplash.com/photo-1509631179647-0177331693ae?auto=format&fit=crop&w=1400&q=85"
+                            alt="Editorial de moda contemporânea com destaque para alfaiataria e caimento"
+                            onerror="this.src='https://placehold.co/900x1100/241E1B/F4EFEA?text=Editorial+Principal+da+Marca'"
+                            class="w-full h-full object-cover object-center animate-slow-zoom"
+                        >
+                        <!-- Gradiente de Integração Visual -->
+                        <div class="absolute inset-0 bg-gradient-to-t from-brand-obsidian via-transparent to-brand-obsidian/30 lg:bg-gradient-to-r lg:from-brand-obsidian lg:via-brand-obsidian/20 lg:to-transparent"></div>
+
+                        <!-- Card Editorial Flutuante sobre a Imagem -->
+                        <div class="absolute bottom-6 right-6 left-6 sm:left-auto sm:w-72 bg-brand-sand/95 backdrop-blur-md text-brand-obsidian p-5 rounded-2xl shadow-2xl border border-brand-obsidian/10">
+                            <div class="flex items-center justify-between mb-2">
+                                <span class="font-mono text-[10px] uppercase tracking-widest text-brand-terracotta font-bold">Lookbook Editorial</span>
+                                <span class="font-serif italic text-sm text-brand-slate">Nº 01</span>
+                            </div>
+                            <p class="font-serif text-lg font-semibold leading-snug">
+                                Silhuetas estruturadas e texturas naturais para o dia e a noite.
+                            </p>
+                            <button onclick="switchView('catalog')" class="mt-3 text-xs font-bold uppercase tracking-wider text-brand-obsidian hover:text-brand-terracotta inline-flex items-center gap-1.5 transition">
+                                <span>Explorar peças</span>
+                                <span>&rarr;</span>
+                            </button>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- Faixa Tipográfica Dinâmica de Identidade -->
+        <div class="bg-brand-terracotta text-brand-sand py-3.5 overflow-hidden border-y border-brand-obsidian/15">
+            <div class="flex whitespace-nowrap animate-marquee">
+                <div class="flex items-center gap-8 mx-4 font-mono text-xs uppercase tracking-[0.25em]">
+                    <span>[SUA MARCA DE MODA]</span>
+                    <span>&bull;</span>
+                    <span>COLEÇÕES AUTORAIS & CURADORIA</span>
+                    <span>&bull;</span>
+                    <span>ATENDIMENTO PERSONALIZADO</span>
+                    <span>&bull;</span>
+                    <span>MODA FEMININA & MASCULINA</span>
+                    <span>&bull;</span>
+                    <span>LANÇAMENTOS DA TEMPORADA</span>
+                    <span>&bull;</span>
+                </div>
+                <div class="flex items-center gap-8 mx-4 font-mono text-xs uppercase tracking-[0.25em]" aria-hidden="true">
+                    <span>[SUA MARCA DE MODA]</span>
+                    <span>&bull;</span>
+                    <span>COLEÇÕES AUTORAIS & CURADORIA</span>
+                    <span>&bull;</span>
+                    <span>ATENDIMENTO PERSONALIZADO</span>
+                    <span>&bull;</span>
+                    <span>MODA FEMININA & MASCULINA</span>
+                    <span>&bull;</span>
+                    <span>LANÇAMENTOS DA TEMPORADA</span>
+                    <span>&bull;</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- =================================================================
+             SEÇÃO 3 — COLEÇÕES EM DESTAQUE (Vitrine Assimétrica de Categorias)
+             ================================================================= -->
+        <section id="colecoes" class="py-20 lg:py-28 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+            <div class="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-6 reveal-up">
+                <div>
+                    <span class="font-mono text-xs uppercase tracking-[0.25em] text-brand-terracotta block mb-2">
+                        01 / Universo da Marca
+                    </span>
+                    <h2 class="font-serif text-4xl sm:text-5xl font-semibold text-brand-obsidian tracking-tight">
+                        Coleções em Destaque
+                    </h2>
+                </div>
+                <p class="text-brand-slate max-w-md text-sm sm:text-base leading-relaxed">
+                    Categorias organizadas para facilitar a navegação pelo estilo de cada cliente. Clique em uma categoria para filtrar a vitrine de produtos.
+                </p>
+            </div>
+
+            <!-- Grid Assimétrico de Categorias -->
+            <div class="grid grid-cols-1 md:grid-cols-12 gap-6">
+
+                <!-- Categoria 1: Feminino (Destaque Vertical Grande) -->
+                <article onclick="openCategoryInCatalog('Feminino')" class="fashion-card group cursor-pointer md:col-span-5 relative rounded-3xl overflow-hidden bg-brand-espresso min-h-[440px] shadow-md reveal-up">
+                    <img
+                        src="https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?auto=format&fit=crop&w=900&q=80"
+                        alt="Coleção Moda Feminina"
+                        onerror="this.src='https://placehold.co/800x1000/241E1B/F4EFEA?text=Colecao+Feminino'"
+                        class="w-full h-full object-cover object-center absolute inset-0"
+                    >
+                    <div class="absolute inset-0 bg-gradient-to-t from-brand-obsidian/90 via-brand-obsidian/20 to-transparent"></div>
+                    <div class="relative h-full flex flex-col justify-between p-7 text-brand-sand">
+                        <span class="self-start px-3.5 py-1 rounded-full bg-brand-sand/15 backdrop-blur-md font-mono text-[11px] uppercase tracking-widest border border-white/20">
+                            Linha Principal
+                        </span>
+                        <div>
+                            <h3 class="font-serif text-3xl sm:text-4xl font-semibold mb-2">Feminino</h3>
+                            <p class="text-brand-sand/80 text-sm mb-4 max-w-xs">Vestidos, conjuntos e peças de corte fluido com acabamento refinado.</p>
+                            <span class="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-widest text-brand-gold group-hover:translate-x-1 transition-transform">
+                                Explorar Feminino &rarr;
+                            </span>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Coluna Central (Masculino + Moda Social) -->
+                <div class="md:col-span-4 flex flex-col gap-6">
+                    <!-- Categoria 2: Masculino -->
+                    <article onclick="openCategoryInCatalog('Masculino')" class="fashion-card group cursor-pointer relative rounded-3xl overflow-hidden bg-brand-espresso min-h-[260px] flex-1 shadow-md reveal-up">
+                        <img
+                            src="https://images.unsplash.com/photo-1617137968427-85924c800a22?auto=format&fit=crop&w=800&q=80"
+                            alt="Coleção Moda Masculina"
+                            onerror="this.src='https://placehold.co/800x600/241E1B/F4EFEA?text=Colecao+Masculino'"
+                            class="w-full h-full object-cover object-center absolute inset-0"
+                        >
+                        <div class="absolute inset-0 bg-gradient-to-t from-brand-obsidian/90 via-brand-obsidian/30 to-transparent"></div>
+                        <div class="relative h-full flex flex-col justify-end p-6 text-brand-sand">
+                            <span class="font-mono text-[10px] uppercase tracking-widest text-brand-gold mb-1">Essenciais & Cortes</span>
+                            <h3 class="font-serif text-3xl font-semibold mb-1">Masculino</h3>
+                            <span class="text-xs uppercase tracking-wider text-brand-sand/90 group-hover:text-brand-gold transition">Ver seleção &rarr;</span>
+                        </div>
+                    </article>
+
+                    <!-- Categoria 3: Moda Social & Alfaiataria -->
+                    <article onclick="openCategoryInCatalog('Alfaiataria')" class="fashion-card group cursor-pointer relative rounded-3xl overflow-hidden bg-brand-espresso min-h-[260px] flex-1 shadow-md reveal-up">
+                        <img
+                            src="https://images.unsplash.com/photo-1594938298603-c8148c4dae35?auto=format&fit=crop&w=800&q=80"
+                            alt="Coleção Moda Social e Alfaiataria"
+                            onerror="this.src='https://placehold.co/800x600/241E1B/F4EFEA?text=Moda+Social'"
+                            class="w-full h-full object-cover object-center absolute inset-0"
+                        >
+                        <div class="absolute inset-0 bg-gradient-to-t from-brand-obsidian/90 via-brand-obsidian/30 to-transparent"></div>
+                        <div class="relative h-full flex flex-col justify-end p-6 text-brand-sand">
+                            <span class="font-mono text-[10px] uppercase tracking-widest text-brand-gold mb-1">Estrutura & Elegância</span>
+                            <h3 class="font-serif text-3xl font-semibold mb-1">Moda Social</h3>
+                            <span class="text-xs uppercase tracking-wider text-brand-sand/90 group-hover:text-brand-gold transition">Ver seleção &rarr;</span>
+                        </div>
+                    </article>
+                </div>
+
+                <!-- Coluna Direita (Moda Casual + Acessórios) -->
+                <div class="md:col-span-3 flex flex-col gap-6">
+                    <!-- Categoria 4: Moda Casual -->
+                    <article onclick="openCategoryInCatalog('Casual')" class="fashion-card group cursor-pointer relative rounded-3xl overflow-hidden bg-brand-espresso min-h-[260px] flex-1 shadow-md reveal-up">
+                        <img
+                            src="https://images.unsplash.com/photo-1523381210434-271e8be1f52b?auto=format&fit=crop&w=700&q=80"
+                            alt="Coleção Moda Casual"
+                            onerror="this.src='https://placehold.co/700x600/241E1B/F4EFEA?text=Moda+Casual'"
+                            class="w-full h-full object-cover object-center absolute inset-0"
+                        >
+                        <div class="absolute inset-0 bg-gradient-to-t from-brand-obsidian/90 via-brand-obsidian/30 to-transparent"></div>
+                        <div class="relative h-full flex flex-col justify-end p-6 text-brand-sand">
+                            <span class="font-mono text-[10px] uppercase tracking-widest text-brand-gold mb-1">Conforto Urbano</span>
+                            <h3 class="font-serif text-2xl sm:text-3xl font-semibold mb-1">Moda Casual</h3>
+                            <span class="text-xs uppercase tracking-wider text-brand-sand/90 group-hover:text-brand-gold transition">Explorar &rarr;</span>
+                        </div>
+                    </article>
+
+                    <!-- Categoria 5: Acessórios & Lançamentos -->
+                    <article onclick="openCategoryInCatalog('Acessórios')" class="fashion-card group cursor-pointer relative rounded-3xl overflow-hidden bg-brand-espresso min-h-[260px] flex-1 shadow-md reveal-up">
+                        <img
+                            src="https://images.unsplash.com/photo-1584917865442-de89df76afd3?auto=format&fit=crop&w=700&q=80"
+                            alt="Coleção Acessórios"
+                            onerror="this.src='https://placehold.co/700x600/241E1B/F4EFEA?text=Acessorios'"
+                            class="w-full h-full object-cover object-center absolute inset-0"
+                        >
+                        <div class="absolute inset-0 bg-gradient-to-t from-brand-obsidian/90 via-brand-obsidian/30 to-transparent"></div>
+                        <div class="relative h-full flex flex-col justify-end p-6 text-brand-sand">
+                            <span class="font-mono text-[10px] uppercase tracking-widest text-brand-gold mb-1">Complementos</span>
+                            <h3 class="font-serif text-2xl sm:text-3xl font-semibold mb-1">Acessórios</h3>
+                            <span class="text-xs uppercase tracking-wider text-brand-sand/90 group-hover:text-brand-gold transition">Explorar &rarr;</span>
+                        </div>
+                    </article>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- =================================================================
+             SEÇÃO 4 — PRODUTOS EM DESTAQUE (Vitrine Comercial Transparente)
+             ================================================================= -->
+        <section id="produtos" class="py-20 lg:py-28 bg-brand-linen/70 border-y border-brand-obsidian/10 editorial-grain">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+                <!-- Cabeçalho da Vitrine + Aviso de Conteúdo Demonstrativo -->
+                <div class="flex flex-col lg:flex-row lg:items-end justify-between gap-6 mb-10 reveal-up">
+                    <div>
+                        <span class="font-mono text-xs uppercase tracking-[0.25em] text-brand-terracotta block mb-2">
+                            02 / Vitrine Comercial
+                        </span>
+                        <h2 class="font-serif text-4xl sm:text-5xl font-semibold text-brand-obsidian">
+                            Peças em Destaque
+                        </h2>
+                    </div>
+
+                    <!-- Selo de Transparência Comercial -->
+                    <div class="bg-brand-sand border border-brand-terracotta/30 rounded-2xl px-4 py-3 max-w-xl flex items-start gap-3 shadow-sm">
+                        <span class="px-2 py-0.5 rounded bg-brand-terracotta text-white font-mono text-[10px] uppercase font-bold mt-0.5 shrink-0">
+                            Modelo
+                        </span>
+                        <p class="text-xs text-brand-slate leading-relaxed">
+                            <strong class="text-brand-obsidian">Vitrine demonstrativa:</strong> Os itens abaixo ilustram o formato de exibição de fotos, variações e consulta. Substitua pelas fotos e dados reais do estoque antes da publicação oficial.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Filtros Rápidos de Vitrine -->
+                <div class="flex flex-wrap items-center justify-between gap-4 mb-10">
+                    <div id="home-filter-buttons" class="flex flex-wrap gap-2">
+                        <button onclick="filterFeaturedProducts('Todos')" class="filter-btn active px-4 py-2 rounded-full text-xs font-semibold uppercase tracking-wider bg-brand-obsidian text-brand-sand transition">
+                            Todos os Destaques
+                        </button>
+                        <button onclick="filterFeaturedProducts('Feminino')" class="filter-btn px-4 py-2 rounded-full text-xs font-semibold uppercase tracking-wider bg-brand-sand text-brand-obsidian border border-brand-obsidian/15 hover:border-brand-obsidian transition">
+                            Feminino
+                        </button>
+                        <button onclick="filterFeaturedProducts('Masculino')" class="filter-btn px-4 py-2 rounded-full text-xs font-semibold uppercase tracking-wider bg-brand-sand text-brand-obsidian border border-brand-obsidian/15 hover:border-brand-obsidian transition">
+                            Masculino
+                        </button>
+                        <button onclick="filterFeaturedProducts('Alfaiataria')" class="filter-btn px-4 py-2 rounded-full text-xs font-semibold uppercase tracking-wider bg-brand-sand text-brand-obsidian border border-brand-obsidian/15 hover:border-brand-obsidian transition">
+                            Moda Social
+                        </button>
+                        <button onclick="filterFeaturedProducts('Acessórios')" class="filter-btn px-4 py-2 rounded-full text-xs font-semibold uppercase tracking-wider bg-brand-sand text-brand-obsidian border border-brand-obsidian/15 hover:border-brand-obsidian transition">
+                            Acessórios
+                        </button>
+                    </div>
+
+                    <button onclick="switchView('catalog')" class="text-xs font-bold uppercase tracking-widest text-brand-terracotta hover:text-brand-obsidian transition inline-flex items-center gap-2">
+                        <span>Abrir catálogo completo (2ª Página)</span>
+                        <span>&rarr;</span>
+                    </button>
+                </div>
+
+                <!-- Grid de Produtos (Renderizado Dinamicamente via JS para Manutenção Fácil) -->
+                <div id="featured-products-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-7">
+                    <!-- Cartões inseridos via JavaScript -->
+                </div>
+
+            </div>
+        </section>
+
+        <!-- =================================================================
+             SEÇÃO 5 — IDENTIDADE DA MARCA (Editorial & Campos Editáveis)
+             ================================================================= -->
+        <section id="sobre" class="py-20 lg:py-28 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+
+                <!-- Composição Fotográfica Editorial Dupla -->
+                <div class="lg:col-span-6 relative reveal-up">
+                    <div class="grid grid-cols-12 gap-4 items-end">
+                        <div class="col-span-7 rounded-3xl overflow-hidden shadow-xl aspect-[3/4] bg-brand-espresso">
+                            <img
+                                src="https://images.unsplash.com/photo-1490481651871-ab68de25d43d?auto=format&fit=crop&w=900&q=80"
+                                alt="Ateliê e curadoria de tecidos e peças"
+                                onerror="this.src='https://placehold.co/600x800/241E1B/F4EFEA?text=Fotografia+da+Marca+1'"
+                                class="w-full h-full object-cover"
+                            >
+                        </div>
+                        <div class="col-span-5 space-y-4">
+                            <div class="bg-brand-obsidian text-brand-sand p-5 rounded-3xl">
+                                <span class="font-mono text-[10px] uppercase tracking-widest text-brand-gold block mb-1">Manifesto</span>
+                                <p class="font-serif italic text-xl leading-snug">
+                                    “Vestir é comunicar identidade antes mesmo da primeira palavra.”
+                                </p>
+                            </div>
+                            <div class="rounded-3xl overflow-hidden shadow-lg aspect-[4/5] bg-brand-espresso">
+                                <img
+                                    src="https://images.unsplash.com/photo-1441984904996-e0b6ba687e04?auto=format&fit=crop&w=700&q=80"
+                                    alt="Ambiente de loja e apresentação de vestuário"
+                                    onerror="this.src='https://placehold.co/500x650/241E1B/F4EFEA?text=Ambiente+da+Loja'"
+                                    class="w-full h-full object-cover"
+                                >
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Narrativa Institucional (Campos Editáveis Claros) -->
+                <div class="lg:col-span-6 space-y-6 reveal-up">
+                    <span class="font-mono text-xs uppercase tracking-[0.25em] text-brand-terracotta block">
+                        03 / Identidade & Essência
+                    </span>
+                    <h2 class="font-serif text-4xl sm:text-5xl font-semibold text-brand-obsidian leading-tight">
+                        Uma marca construída sobre estilo, propósito e proximidade.
+                    </h2>
+
+                    <!-- Área Editável: História Real da Marca -->
+                    <div class="p-6 rounded-2xl bg-white/80 border border-brand-obsidian/10 space-y-4 shadow-sm">
+                        <div class="flex items-center justify-between">
+                            <span class="font-mono text-[11px] uppercase tracking-wider text-brand-terracotta font-bold">
+                                [História & Origem da Marca — Inserir Texto Oficial]
+                            </span>
+                            <button onclick="enableInlineBrandEdit()" class="text-xs font-semibold underline text-brand-slate hover:text-brand-obsidian">
+                                Editar prévia
+                            </button>
+                        </div>
+                        <p id="brand-story-text" class="text-brand-slate leading-relaxed text-sm sm:text-base">
+                            [Espaço reservado para a história verdadeira da sua marca: ano de fundação, cidade de origem, inspiração dos fundadores e o propósito que guia a escolha de cada coleção.]
+                        </p>
+                        <p id="brand-proposal-text" class="text-brand-slate leading-relaxed text-sm sm:text-base">
+                            [Espaço reservado para a proposta comercial e diferencial da loja: atendimento consultivo, seleção criteriosa de peças e compromisso com a experiência de quem veste a marca.]
+                        </p>
+                    </div>
+
+                    <!-- Pilares Editáveis -->
+                    <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 pt-2">
+                        <div class="p-4 rounded-2xl bg-brand-linen/70 border border-brand-obsidian/10">
+                            <span class="font-mono text-xs text-brand-terracotta font-bold block mb-1">01. CURADORIA</span>
+                            <p class="text-xs text-brand-obsidian/80 leading-relaxed">[Inserir pilar de qualidade ou seleção de materiais]</p>
+                        </div>
+                        <div class="p-4 rounded-2xl bg-brand-linen/70 border border-brand-obsidian/10">
+                            <span class="font-mono text-xs text-brand-terracotta font-bold block mb-1">02. ESTÉTICA</span>
+                            <p class="text-xs text-brand-obsidian/80 leading-relaxed">[Inserir pilar de estilo e identidade visual]</p>
+                        </div>
+                        <div class="p-4 rounded-2xl bg-brand-linen/70 border border-brand-obsidian/10">
+                            <span class="font-mono text-xs text-brand-terracotta font-bold block mb-1">03. ATENDIMENTO</span>
+                            <p class="text-xs text-brand-obsidian/80 leading-relaxed">[Inserir diferencial de relacionamento com o cliente]</p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- =================================================================
+             SEÇÃO 6 — NOVIDADES, TENDÊNCIAS & GUIA DE ESTILO
+             ================================================================= -->
+        <section id="novidades" class="py-20 lg:py-28 bg-brand-obsidian text-brand-sand">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+                <div class="flex flex-col md:flex-row md:items-end justify-between mb-14 gap-6 reveal-up">
+                    <div>
+                        <span class="font-mono text-xs uppercase tracking-[0.25em] text-brand-gold block mb-2">
+                            04 / Journal & Tendências
+                        </span>
+                        <h2 class="font-serif text-4xl sm:text-5xl font-semibold text-brand-sand">
+                            Novidades & Combinações
+                        </h2>
+                    </div>
+                    <p class="text-brand-sand/70 max-w-md text-sm sm:text-base">
+                        Inspiração editorial, lançamentos da estação e propostas de styling para diferentes momentos.
+                    </p>
+                </div>
+
+                <!-- Grid Editorial de Tendências -->
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+
+                    <!-- Card Editorial 1 -->
+                    <article class="fashion-card group rounded-3xl overflow-hidden bg-brand-espresso border border-white/10 flex flex-col reveal-up">
+                        <div class="aspect-[4/3] overflow-hidden relative">
+                            <img
+                                src="https://images.unsplash.com/photo-1483985988355-763728e1935b?auto=format&fit=crop&w=800&q=80"
+                                alt="Destaque da Temporada"
+                                onerror="this.src='https://placehold.co/800x600/241E1B/F4EFEA?text=Destaque+Temporada'"
+                                class="w-full h-full object-cover"
+                            >
+                            <span class="absolute top-4 left-4 px-3 py-1 rounded-full bg-brand-obsidian/85 backdrop-blur-md text-brand-gold font-mono text-[10px] uppercase tracking-widest">
+                                Destaque da Estação
+                            </span>
+                        </div>
+                        <div class="p-7 flex-1 flex flex-col justify-between space-y-4">
+                            <div>
+                                <h3 class="font-serif text-2xl font-semibold mb-2 group-hover:text-brand-gold transition-colors">
+                                    Tons Terrosos & Texturas Naturais
+                                </h3>
+                                <p class="text-brand-sand/75 text-sm leading-relaxed">
+                                    A combinação entre neutros quentes e tecidos encorpados cria produções atemporais e fáceis de coordenar no dia a dia.
+                                </p>
+                            </div>
+                            <button onclick="switchView('catalog')" class="self-start text-xs font-bold uppercase tracking-widest text-brand-gold hover:underline">
+                                Ver peças relacionadas &rarr;
+                            </button>
+                        </div>
+                    </article>
+
+                    <!-- Card Editorial 2 -->
+                    <article class="fashion-card group rounded-3xl overflow-hidden bg-brand-espresso border border-white/10 flex flex-col reveal-up">
+                        <div class="aspect-[4/3] overflow-hidden relative">
+                            <img
+                                src="https://images.unsplash.com/photo-1539109136881-3be0616acf4b?auto=format&fit=crop&w=800&q=80"
+                                alt="Combinações de Looks"
+                                onerror="this.src='https://placehold.co/800x600/241E1B/F4EFEA?text=Guia+de+Looks'"
+                                class="w-full h-full object-cover"
+                            >
+                            <span class="absolute top-4 left-4 px-3 py-1 rounded-full bg-brand-obsidian/85 backdrop-blur-md text-brand-gold font-mono text-[10px] uppercase tracking-widest">
+                                Guia de Styling
+                            </span>
+                        </div>
+                        <div class="p-7 flex-1 flex flex-col justify-between space-y-4">
+                            <div>
+                                <h3 class="font-serif text-2xl font-semibold mb-2 group-hover:text-brand-gold transition-colors">
+                                    Do Escritório ao Encontro Noturno
+                                </h3>
+                                <p class="text-brand-sand/75 text-sm leading-relaxed">
+                                    Como transformar uma base de alfaiataria leve com a troca estratégica de acessórios e sobreposições.
+                                </p>
+                            </div>
+                            <button onclick="switchView('catalog')" class="self-start text-xs font-bold uppercase tracking-widest text-brand-gold hover:underline">
+                                Explorar combinações &rarr;
+                            </button>
+                        </div>
+                    </article>
+
+                    <!-- Card Editorial 3 -->
+                    <article class="fashion-card group rounded-3xl overflow-hidden bg-brand-espresso border border-white/10 flex flex-col reveal-up">
+                        <div class="aspect-[4/3] overflow-hidden relative">
+                            <img
+                                src="https://images.unsplash.com/photo-1469334031218-e382a71b716b?auto=format&fit=crop&w=800&q=80"
+                                alt="Novos Lançamentos"
+                                onerror="this.src='https://placehold.co/800x600/241E1B/F4EFEA?text=Novos+Lancamentos'"
+                                class="w-full h-full object-cover"
+                            >
+                            <span class="absolute top-4 left-4 px-3 py-1 rounded-full bg-brand-terracotta text-white font-mono text-[10px] uppercase tracking-widest">
+                                Lançamentos
+                            </span>
+                        </div>
+                        <div class="p-7 flex-1 flex flex-col justify-between space-y-4">
+                            <div>
+                                <h3 class="font-serif text-2xl font-semibold mb-2 group-hover:text-brand-gold transition-colors">
+                                    Nova Coleção: Edição Limitada
+                                </h3>
+                                <p class="text-brand-sand/75 text-sm leading-relaxed">
+                                    Conheça as peças recém-chegadas à vitrine. Disponibilidade sujeita à grade de tamanhos em loja.
+                                </p>
+                            </div>
+                            <button onclick="openWhatsAppDrawer('Consulta sobre Lançamentos')" class="self-start text-xs font-bold uppercase tracking-widest text-brand-gold hover:underline">
+                                Consultar disponibilidade &rarr;
+                            </button>
+                        </div>
+                    </article>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- =================================================================
+             SEÇÃO 7 — INSTAGRAM E PRESENÇA DIGITAL (Preparado para Integração Real)
+             ================================================================= -->
+        <section id="instagram" class="py-20 lg:py-24 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+            <div class="rounded-3xl bg-brand-linen border border-brand-obsidian/15 p-8 sm:p-12 lg:p-16 reveal-up">
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
+
+                    <!-- Informações do Perfil Oficial -->
+                    <div class="lg:col-span-5 space-y-5">
+                        <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-brand-sand border border-brand-obsidian/15">
+                            <svg class="w-4 h-4 text-brand-terracotta" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+                            <span class="font-mono text-xs uppercase tracking-wider text-brand-obsidian">Comunidade & Bastidores</span>
+                        </div>
+
+                        <h2 class="font-serif text-3xl sm:text-4xl font-semibold text-brand-obsidian">
+                            Acompanhe <span class="italic text-brand-terracotta">@[seuinstagram]</span>
+                        </h2>
+                        <p class="text-brand-slate text-sm sm:text-base leading-relaxed">
+                            Bastidores de ensaios, novidades diárias, provadores comentados e lançamentos em primeira mão no nosso perfil oficial.
+                        </p>
+
+                        <!-- Aviso Técnico de Integração Honesta -->
+                        <div class="p-4 rounded-2xl bg-brand-sand/80 border border-dashed border-brand-obsidian/25 text-xs text-brand-slate">
+                            <strong class="text-brand-obsidian block mb-1">Espaço preparado para feed oficial:</strong>
+                            Ao conectar a API do Instagram ou incorporar o widget oficial da marca, as publicações reais serão exibidas automaticamente na grade ao lado.
+                        </div>
+
+                        <div class="pt-2">
+                            <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-3 px-6 py-3.5 rounded-full bg-brand-obsidian text-brand-sand text-xs font-semibold uppercase tracking-widest hover:bg-brand-terracotta transition-all">
+                                <span>Seguir Perfil Oficial</span>
+                                <span>&#8599;</span>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Grade Visual Preparada para Publicações Reais -->
+                    <div class="lg:col-span-7">
+                        <div id="instagram-embed-container" class="grid grid-cols-2 sm:grid-cols-3 gap-4">
+                            <!-- Slots Visuais Editoriais (Não simulam métricas falsas) -->
+                            <div class="aspect-square rounded-2xl overflow-hidden relative group bg-brand-espresso">
+                                <img src="https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?auto=format&fit=crop&w=500&q=80" alt="Editorial Instagram 1" class="w-full h-full object-cover opacity-90 group-hover:scale-105 transition duration-500">
+                                <div class="absolute inset-0 bg-brand-obsidian/40 flex items-end p-3">
+                                    <span class="font-mono text-[10px] text-white/90 uppercase tracking-wider">Slot Feed 01</span>
+                                </div>
+                            </div>
+                            <div class="aspect-square rounded-2xl overflow-hidden relative group bg-brand-espresso">
+                                <img src="https://images.unsplash.com/photo-1509631179647-0177331693ae?auto=format&fit=crop&w=500&q=80" alt="Editorial Instagram 2" class="w-full h-full object-cover opacity-90 group-hover:scale-105 transition duration-500">
+                                <div class="absolute inset-0 bg-brand-obsidian/40 flex items-end p-3">
+                                    <span class="font-mono text-[10px] text-white/90 uppercase tracking-wider">Slot Feed 02</span>
+                                </div>
+                            </div>
+                            <div class="aspect-square rounded-2xl overflow-hidden relative group bg-brand-espresso">
+                                <img src="https://images.unsplash.com/photo-1584917865442-de89df76afd3?auto=format&fit=crop&w=500&q=80" alt="Editorial Instagram 3" class="w-full h-full object-cover opacity-90 group-hover:scale-105 transition duration-500">
+                                <div class="absolute inset-0 bg-brand-obsidian/40 flex items-end p-3">
+                                    <span class="font-mono text-[10px] text-white/90 uppercase tracking-wider">Slot Feed 03</span>
+                                </div>
+                            </div>
+                            <div class="aspect-square rounded-2xl overflow-hidden relative group bg-brand-espresso">
+                                <img src="https://images.unsplash.com/photo-1617137968427-85924c800a22?auto=format&fit=crop&w=500&q=80" alt="Editorial Instagram 4" class="w-full h-full object-cover opacity-90 group-hover:scale-105 transition duration-500">
+                                <div class="absolute inset-0 bg-brand-obsidian/40 flex items-end p-3">
+                                    <span class="font-mono text-[10px] text-white/90 uppercase tracking-wider">Slot Feed 04</span>
+                                </div>
+                            </div>
+                            <div class="aspect-square rounded-2xl overflow-hidden relative group bg-brand-espresso">
+                                <img src="https://images.unsplash.com/photo-1490481651871-ab68de25d43d?auto=format&fit=crop&w=500&q=80" alt="Editorial Instagram 5" class="w-full h-full object-cover opacity-90 group-hover:scale-105 transition duration-500">
+                                <div class="absolute inset-0 bg-brand-obsidian/40 flex items-end p-3">
+                                    <span class="font-mono text-[10px] text-white/90 uppercase tracking-wider">Slot Feed 05</span>
+                                </div>
+                            </div>
+                            <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" class="aspect-square rounded-2xl border-2 border-dashed border-brand-obsidian/25 hover:border-brand-terracotta bg-brand-sand/60 flex flex-col items-center justify-center p-4 text-center group transition">
+                                <span class="font-serif italic text-2xl text-brand-obsidian group-hover:text-brand-terracotta transition">+ Ver mais</span>
+                                <span class="font-mono text-[10px] uppercase tracking-wider text-brand-slate mt-1">Abrir no Instagram</span>
+                            </a>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- =================================================================
+             SEÇÃO 8 — CONTATO & ATENDIMENTO COMERCIAL
+             ================================================================= -->
+        <section id="contato" class="py-20 lg:py-28 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto border-t border-brand-obsidian/10">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12">
+
+                <!-- Canais Diretos e Dados Editáveis da Loja -->
+                <div class="lg:col-span-5 space-y-8 reveal-up">
+                    <div>
+                        <span class="font-mono text-xs uppercase tracking-[0.25em] text-brand-terracotta block mb-2">
+                            05 / Relacionamento
+                        </span>
+                        <h2 class="font-serif text-4xl sm:text-5xl font-semibold text-brand-obsidian">
+                            Atendimento & Contato
+                        </h2>
+                        <p class="text-brand-slate mt-3 text-sm sm:text-base leading-relaxed">
+                            Tire dúvidas sobre medidas, disponibilidade em estoque, envios ou agende uma visita à loja física.
+                        </p>
+                    </div>
+
+                    <!-- Cartões de Canais Reais (Sem Dados Inventados) -->
+                    <div class="space-y-4">
+                        <div class="p-5 rounded-2xl bg-white border border-brand-obsidian/10 flex items-start justify-between gap-4 shadow-sm">
+                            <div>
+                                <span class="font-mono text-[11px] uppercase tracking-wider text-brand-terracotta font-bold">WhatsApp Comercial</span>
+                                <p class="font-medium text-brand-obsidian mt-1">[Inserir Número Oficial com DDD]</p>
+                                <p class="text-xs text-brand-slate mt-0.5">Atendimento direto para pedidos e consultas</p>
+                            </div>
+                            <button onclick="openWhatsAppDrawer('Contato via Seção Institucional')" class="px-4 py-2 rounded-full bg-brand-obsidian text-brand-sand text-xs font-semibold uppercase tracking-wider hover:bg-brand-terracotta transition shrink-0">
+                                Iniciar Conversa
+                            </button>
+                        </div>
+
+                        <div class="p-5 rounded-2xl bg-white border border-brand-obsidian/10 flex items-start justify-between gap-4 shadow-sm">
+                            <div>
+                                <span class="font-mono text-[11px] uppercase tracking-wider text-brand-terracotta font-bold">Instagram Oficial</span>
+                                <p class="font-medium text-brand-obsidian mt-1">@[inserir_usuario_instagram]</p>
+                                <p class="text-xs text-brand-slate mt-0.5">Mensagens diretas e catálogo nos destaques</p>
+                            </div>
+                            <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" class="px-4 py-2 rounded-full border border-brand-obsidian/25 text-brand-obsidian text-xs font-semibold uppercase tracking-wider hover:bg-brand-obsidian hover:text-brand-sand transition shrink-0">
+                                Acessar Perfil
+                            </a>
+                        </div>
+
+                        <div class="p-5 rounded-2xl bg-brand-linen/70 border border-brand-obsidian/10 space-y-3">
+                            <div>
+                                <span class="font-mono text-[11px] uppercase tracking-wider text-brand-slate font-bold">Endereço da Loja Física (Opcional)</span>
+                                <p class="text-sm text-brand-obsidian mt-0.5">[Inserir Rua, Número, Bairro — Cidade/UF ou "Atendimento Exclusivamente Online"]</p>
+                            </div>
+                            <div class="pt-2 border-t border-brand-obsidian/10">
+                                <span class="font-mono text-[11px] uppercase tracking-wider text-brand-slate font-bold">Horário de Atendimento</span>
+                                <p class="text-sm text-brand-obsidian mt-0.5">[Inserir Dias e Horários Oficiais de Funcionamento]</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Formulário de Contato Estruturado -->
+                <div class="lg:col-span-7 reveal-up">
+                    <div class="bg-brand-obsidian text-brand-sand p-8 sm:p-10 rounded-3xl shadow-xl">
+                        <h3 class="font-serif text-3xl font-semibold mb-2">Envie uma mensagem</h3>
+                        <p class="text-brand-sand/70 text-sm mb-8">
+                            Preencha os campos abaixo para solicitar informações sobre coleções, parcerias ou atendimento personalizado.
+                        </p>
+
+                        <form id="contact-form" onsubmit="handleContactSubmit(event)" class="space-y-5">
+                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
+                                <div>
+                                    <label for="contact-name" class="block font-mono text-[11px] uppercase tracking-wider text-brand-gold mb-2">Nome Completo *</label>
+                                    <input type="text" id="contact-name" required placeholder="Como podemos lhe chamar?" class="w-full px-4 py-3.5 rounded-xl bg-white/10 border border-white/15 text-brand-sand placeholder-white/40 text-sm focus:outline-none focus:border-brand-gold transition">
+                                </div>
+                                <div>
+                                    <label for="contact-phone" class="block font-mono text-[11px] uppercase tracking-wider text-brand-gold mb-2">WhatsApp / Telefone *</label>
+                                    <input type="tel" id="contact-phone" required placeholder="(00) 00000-0000" class="w-full px-4 py-3.5 rounded-xl bg-white/10 border border-white/15 text-brand-sand placeholder-white/40 text-sm focus:outline-none focus:border-brand-gold transition">
+                                </div>
+                            </div>
+
+                            <div>
+                                <label for="contact-subject" class="block font-mono text-[11px] uppercase tracking-wider text-brand-gold mb-2">Assunto</label>
+                                <select id="contact-subject" class="w-full px-4 py-3.5 rounded-xl bg-brand-espresso border border-white/15 text-brand-sand text-sm focus:outline-none focus:border-brand-gold transition">
+                                    <option value="Consulta de Peças / Coleção">Consulta de Peças / Coleção</option>
+                                    <option value="Atendimento Personalizado / Medidas">Atendimento Personalizado / Medidas</option>
+                                    <option value="Encomendas e Disponibilidade">Encomendas e Disponibilidade</option>
+                                    <option value="Imprensa / Parcerias">Imprensa / Parcerias</option>
+                                </select>
+                            </div>
+
+                            <div>
+                                <label for="contact-message" class="block font-mono text-[11px] uppercase tracking-wider text-brand-gold mb-2">Mensagem *</label>
+                                <textarea id="contact-message" rows="4" required placeholder="Escreva sua dúvida ou informe a peça de interesse..." class="w-full px-4 py-3.5 rounded-xl bg-white/10 border border-white/15 text-brand-sand placeholder-white/40 text-sm focus:outline-none focus:border-brand-gold transition"></textarea>
+                            </div>
+
+                            <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pt-2">
+                                <span class="text-xs text-brand-sand/60">Seus dados são utilizados apenas para retorno do atendimento.</span>
+                                <button type="submit" class="px-8 py-4 rounded-full bg-brand-terracotta hover:bg-[#b55231] text-white text-xs font-bold uppercase tracking-widest transition shadow-lg">
+                                    Enviar Mensagem
+                                </button>
+                            </div>
+                        </form>
+
+                        <!-- Feedback de Envio (Sem alert()) -->
+                        <div id="contact-feedback" class="hidden mt-6 p-4 rounded-2xl bg-brand-gold/20 border border-brand-gold text-brand-sand text-sm">
+                            Mensagem registrada com sucesso. Em ambiente de produção, este formulário encaminha diretamente para o e-mail ou WhatsApp oficial da marca.
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+    </main>
+
+    <!-- =====================================================================
+         VISÃO 2: PÁGINA SECUNDÁRIA — CATÁLOGO COMPLETO & COLEÇÕES
+         ===================================================================== -->
+    <section id="view-catalog" class="hidden min-h-screen bg-brand-sand pb-24">
+        <!-- Banner Editorial da Página de Catálogo -->
+        <div class="bg-brand-obsidian text-brand-sand py-14 sm:py-20 px-4 sm:px-6 lg:px-8 border-b border-white/10">
+            <div class="max-w-7xl mx-auto">
+                <button onclick="switchView('home')" class="inline-flex items-center gap-2 text-xs font-mono uppercase tracking-widest text-brand-gold hover:text-white mb-6 transition">
+                    <span>&larr; Voltar para a Página Inicial</span>
+                </button>
+                <div class="flex flex-col lg:flex-row lg:items-end justify-between gap-6">
+                    <div>
+                        <span class="font-mono text-xs uppercase tracking-[0.25em] text-brand-terracotta block mb-2">
+                            Acervo & Vitrine
+                        </span>
+                        <h1 class="font-serif text-4xl sm:text-6xl font-semibold">
+                            Catálogo de Coleções
+                        </h1>
+                    </div>
+                    <p class="text-brand-sand/75 max-w-lg text-sm sm:text-base">
+                        Explore todas as categorias da marca, visualize variações disponíveis e consulte diretamente nossa equipe pelo WhatsApp.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Barra de Filtros e Busca do Catálogo -->
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-10">
+            <div class="bg-white p-5 rounded-3xl border border-brand-obsidian/10 shadow-sm flex flex-col md:flex-row items-stretch md:items-center justify-between gap-4 mb-10">
+                <div id="catalog-category-tabs" class="flex flex-wrap gap-2">
+                    <button onclick="filterCatalogPage('Todos')" data-cat="Todos" class="cat-tab px-4 py-2 rounded-full text-xs font-semibold uppercase tracking-wider bg-brand-obsidian text-brand-sand">Todos</button>
+                    <button onclick="filterCatalogPage('Feminino')" data-cat="Feminino" class="cat-tab px-4 py-2 rounded-full text-xs font-semibold uppercase tracking-wider bg-brand-linen text-brand-obsidian hover:bg-brand-obsidian hover:text-brand-sand transition">Feminino</button>
+                    <button onclick="filterCatalogPage('Masculino')" data-cat="Masculino" class="cat-tab px-4 py-2 rounded-full text-xs font-semibold uppercase tracking-wider bg-brand-linen text-brand-obsidian hover:bg-brand-obsidian hover:text-brand-sand transition">Masculino</button>
+                    <button onclick="filterCatalogPage('Alfaiataria')" data-cat="Alfaiataria" class="cat-tab px-4 py-2 rounded-full text-xs font-semibold uppercase tracking-wider bg-brand-linen text-brand-obsidian hover:bg-brand-obsidian hover:text-brand-sand transition">Moda Social</button>
+                    <button onclick="filterCatalogPage('Casual')" data-cat="Casual" class="cat-tab px-4 py-2 rounded-full text-xs font-semibold uppercase tracking-wider bg-brand-linen text-brand-obsidian hover:bg-brand-obsidian hover:text-brand-sand transition">Moda Casual</button>
+                    <button onclick="filterCatalogPage('Acessórios')" data-cat="Acessórios" class="cat-tab px-4 py-2 rounded-full text-xs font-semibold uppercase tracking-wider bg-brand-linen text-brand-obsidian hover:bg-brand-obsidian hover:text-brand-sand transition">Acessórios</button>
+                </div>
+
+                <div class="relative min-w-[240px]">
+                    <input type="text" id="catalog-search" oninput="renderCatalogGrid()" placeholder="Buscar peça ou estilo..." class="w-full pl-4 pr-10 py-2.5 rounded-full bg-brand-sand border border-brand-obsidian/15 text-sm focus:outline-none focus:border-brand-terracotta">
+                    <svg class="w-4 h-4 text-brand-slate absolute right-3.5 top-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/></svg>
+                </div>
+            </div>
+
+            <!-- Grid Completo do Catálogo -->
+            <div id="catalog-products-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-7">
+                <!-- Preenchido via JavaScript -->
+            </div>
+        </div>
+    </section>
+
+    <!-- =====================================================================
+         SEÇÃO 9 — RODAPÉ INSTITUCIONAL COMPLETO
+         ===================================================================== -->
+    <footer class="bg-brand-obsidian text-brand-sand border-t border-white/10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-10 pb-12 border-b border-white/10">
+
+                <!-- Identidade & Posicionamento -->
+                <div class="lg:col-span-4 space-y-4">
+                    <div class="flex items-center gap-3">
+                        <div class="w-9 h-9 rounded-full border border-brand-gold flex items-center justify-center text-brand-gold font-serif italic text-lg">
+                            M&A
+                        </div>
+                        <span class="font-serif text-2xl font-semibold tracking-[0.14em] uppercase">[SUA MARCA]</span>
+                    </div>
+                    <p class="text-brand-sand/70 text-sm leading-relaxed max-w-sm">
+                        Moda e vestuário com identidade autoral, curadoria editorial e atendimento próximo para valorizar cada estilo.
+                    </p>
+                    <p class="font-mono text-[11px] text-brand-gold uppercase tracking-wider">
+                        CNPJ: [00.000.000/0001-00 — Inserir se aplicável]
+                    </p>
+                </div>
+
+                <!-- Navegação Institucional -->
+                <div class="lg:col-span-2 space-y-3">
+                    <h4 class="font-mono text-xs uppercase tracking-widest text-brand-gold">Navegação</h4>
+                    <ul class="space-y-2.5 text-sm text-brand-sand/80">
+                        <li><a href="#inicio" onclick="switchView('home')" class="hover:text-white transition">Início</a></li>
+                        <li><a href="#colecoes" onclick="switchView('home')" class="hover:text-white transition">Coleções</a></li>
+                        <li><button onclick="switchView('catalog')" class="hover:text-white transition">Catálogo Completo</button></li>
+                        <li><a href="#novidades" onclick="switchView('home')" class="hover:text-white transition">Novidades</a></li>
+                        <li><a href="#sobre" onclick="switchView('home')" class="hover:text-white transition">Sobre a marca</a></li>
+                    </ul>
+                </div>
+
+                <!-- Categorias -->
+                <div class="lg:col-span-3 space-y-3">
+                    <h4 class="font-mono text-xs uppercase tracking-widest text-brand-gold">Vitrines</h4>
+                    <ul class="space-y-2.5 text-sm text-brand-sand/80">
+                        <li><button onclick="openCategoryInCatalog('Feminino')" class="hover:text-white transition">Moda Feminina</button></li>
+                        <li><button onclick="openCategoryInCatalog('Masculino')" class="hover:text-white transition">Moda Masculina</button></li>
+                        <li><button onclick="openCategoryInCatalog('Alfaiataria')" class="hover:text-white transition">Moda Social & Alfaiataria</button></li>
+                        <li><button onclick="openCategoryInCatalog('Casual')" class="hover:text-white transition">Moda Casual</button></li>
+                        <li><button onclick="openCategoryInCatalog('Acessórios')" class="hover:text-white transition">Acessórios</button></li>
+                    </ul>
+                </div>
+
+                <!-- Contato & Redes Sociais -->
+                <div class="lg:col-span-3 space-y-3">
+                    <h4 class="font-mono text-xs uppercase tracking-widest text-brand-gold">Atendimento</h4>
+                    <ul class="space-y-2.5 text-sm text-brand-sand/80">
+                        <li>WhatsApp: [Inserir Número]</li>
+                        <li>Instagram: @[inserir_perfil]</li>
+                        <li>E-mail: [contato@suamarca.com.br]</li>
+                        <li>[Cidade — Estado]</li>
+                    </ul>
+                </div>
+
+            </div>
+
+            <!-- Barra Legal & Política de Privacidade -->
+            <div class="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-brand-sand/60">
+                <p>&copy; <span id="current-year"></span> [SUA MARCA]. Todos os direitos reservados.</p>
+                <div class="flex items-center gap-6">
+                    <button onclick="openPrivacyModal()" class="hover:text-brand-gold underline transition">
+                        Política de Privacidade
+                    </button>
+                    <button onclick="toggleEditGuide()" class="hover:text-brand-gold underline transition">
+                        Checklist de Implantação
+                    </button>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- =====================================================================
+         MODAL DE DETALHES DO PRODUTO & CONSULTA COMERCIAL
+         ===================================================================== -->
+    <div id="product-modal" class="fixed inset-0 z-50 hidden items-center justify-center p-4 bg-brand-obsidian/80 backdrop-blur-sm" role="dialog" aria-modal="true">
+        <div class="bg-brand-sand text-brand-obsidian rounded-3xl max-w-3xl w-full overflow-hidden shadow-2xl border border-brand-obsidian/15 animate-fade-in">
+            <div class="grid grid-cols-1 md:grid-cols-12">
+                <div class="md:col-span-6 bg-brand-espresso relative min-h-[300px]">
+                    <img id="modal-product-img" src="" alt="" class="w-full h-full object-cover">
+                    <span class="absolute top-4 left-4 px-3 py-1 rounded-full bg-brand-obsidian/85 text-brand-gold font-mono text-[10px] uppercase tracking-wider">
+                        Item Demonstrativo
+                    </span>
+                </div>
+                <div class="md:col-span-6 p-6 sm:p-8 flex flex-col justify-between space-y-6">
+                    <div>
+                        <div class="flex items-center justify-between mb-2">
+                            <span id="modal-product-cat" class="font-mono text-xs uppercase tracking-widest text-brand-terracotta font-bold">Categoria</span>
+                            <button onclick="closeProductModal()" class="p-1.5 rounded-full hover:bg-brand-obsidian/10 transition" aria-label="Fechar janela">
+                                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
+                            </button>
+                        </div>
+                        <h3 id="modal-product-name" class="font-serif text-3xl font-semibold text-brand-obsidian mb-2">Nome da Peça</h3>
+                        <p id="modal-product-price" class="font-mono text-sm font-bold text-brand-slate mb-4">Preço sob consulta</p>
+                        <p id="modal-product-desc" class="text-sm text-brand-slate leading-relaxed mb-5">Descrição curta da peça.</p>
+
+                        <!-- Variações Demonstrativas -->
+                        <div class="space-y-2">
+                            <span class="block font-mono text-[10px] uppercase tracking-wider text-brand-obsidian font-bold">Variações de Exemplo:</span>
+                            <div id="modal-product-variants" class="flex flex-wrap gap-2"></div>
+                        </div>
+                    </div>
+
+                    <div class="pt-4 border-t border-brand-obsidian/10 space-y-3">
+                        <button id="modal-whatsapp-btn" class="w-full py-3.5 rounded-full bg-brand-terracotta hover:bg-[#b55231] text-white text-xs font-bold uppercase tracking-widest transition shadow-md">
+                            Consultar Peça no WhatsApp
+                        </button>
+                        <p class="text-[11px] text-brand-slate text-center">
+                            Substitua este item pelos dados reais do seu estoque antes de publicar.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- =====================================================================
+         GAVETA DE CONSULTA WHATSAPP (Configurável com Número Real)
+         ===================================================================== -->
+    <div id="whatsapp-drawer" class="fixed inset-0 z-50 hidden items-end sm:items-center justify-center p-4 bg-brand-obsidian/75 backdrop-blur-sm">
+        <div class="bg-brand-sand text-brand-obsidian rounded-3xl max-w-md w-full p-6 sm:p-8 shadow-2xl border border-brand-obsidian/15 space-y-5">
+            <div class="flex items-center justify-between">
+                <span class="font-mono text-xs uppercase tracking-widest text-brand-terracotta font-bold">Canal Direto WhatsApp</span>
+                <button onclick="closeWhatsAppDrawer()" class="p-1.5 rounded-full hover:bg-brand-obsidian/10">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
+                </button>
+            </div>
+            <h3 class="font-serif text-2xl font-semibold">Iniciar atendimento personalizado</h3>
+            <p class="text-xs text-brand-slate leading-relaxed">
+                Configure o número oficial da marca no código (variável <code class="bg-brand-linen px-1.5 py-0.5 rounded font-mono">BRAND_CONFIG.whatsappNumber</code>) para direcionar automaticamente para o aplicativo.
+            </p>
+            <div>
+                <label class="block font-mono text-[10px] uppercase tracking-wider text-brand-obsidian mb-1.5">Mensagem pré-preenchida:</label>
+                <textarea id="whatsapp-prefill-text" rows="3" class="w-full p-3 rounded-xl bg-white border border-brand-obsidian/15 text-sm text-brand-obsidian focus:outline-none"></textarea>
+            </div>
+            <div class="flex gap-3">
+                <button onclick="copyWhatsAppMessage()" class="flex-1 py-3 rounded-full border border-brand-obsidian/25 text-xs font-bold uppercase tracking-wider hover:bg-brand-obsidian hover:text-brand-sand transition">
+                    Copiar Mensagem
+                </button>
+                <a id="whatsapp-external-link" href="https://wa.me/" target="_blank" rel="noopener noreferrer" class="flex-1 py-3 rounded-full bg-brand-terracotta text-white text-xs font-bold uppercase tracking-wider text-center hover:bg-[#b55231] transition">
+                    Abrir WhatsApp
+                </a>
+            </div>
+            <p id="copy-toast" class="hidden text-center text-xs font-medium text-brand-terracotta">Mensagem copiada para a área de transferência.</p>
+        </div>
+    </div>
+
+    <!-- =====================================================================
+         MODAL DE POLÍTICA DE PRIVACIDADE & GUIA DE IMPLANTAÇÃO
+         ===================================================================== -->
+    <div id="info-modal" class="fixed inset-0 z-50 hidden items-center justify-center p-4 bg-brand-obsidian/75 backdrop-blur-sm">
+        <div class="bg-brand-sand text-brand-obsidian rounded-3xl max-w-2xl w-full p-6 sm:p-8 shadow-2xl border border-brand-obsidian/15 max-h-[85vh] overflow-y-auto space-y-4">
+            <div class="flex items-center justify-between border-b border-brand-obsidian/10 pb-4">
+                <h3 id="info-modal-title" class="font-serif text-2xl sm:text-3xl font-semibold">Título</h3>
+                <button onclick="closeInfoModal()" class="p-1.5 rounded-full hover:bg-brand-obsidian/10">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
+                </button>
+            </div>
+            <div id="info-modal-body" class="text-sm text-brand-slate leading-relaxed space-y-3"></div>
+        </div>
+    </div>
+
+    <!-- =====================================================================
+         SCRIPTS — CONFIGURAÇÃO DA MARCA, DADOS E LÓGICA DA INTERFACE
+         ===================================================================== -->
+    <script src="assets/js/brand-config.js"></script>
+    <script src="assets/js/products-data.js"></script>
+    <script src="assets/js/main.js"></script>
+</body>
+</html>
